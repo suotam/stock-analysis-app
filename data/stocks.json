@@ -1,0 +1,6 @@
+[
+    {"name": "Tesla", "price": 185.5, "volume": 12000},
+    {"name": "Apple", "price": 145.2, "volume": 15000},
+    {"name": "Google", "price": 2750.3, "volume": 5000},
+    {"name": "Amazon", "price": 3500.0, "volume": 7000}
+  ]
