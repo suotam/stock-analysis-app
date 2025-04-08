@@ -1,0 +1,9 @@
+# Ignorování souborů a adresářů Pythonu
+*.pyc
+__pycache__/
+
+# Ignorování dočasných souborů VS Code
+.vscode/
+
+# Ignorování souborů pro virtualenv
+venv/
