@@ -1,8 +1,8 @@
 class Stock:
-    def __init__(self, name, price, volume):
+    def __init__(self, name, price=None, volume=None):
         self.name = name
         self.price = price
         self.volume = volume
-    
+
     def print_info(self):
-        print(f"Stock: {self.name}, Price: {self.price}, Volume: {self.volume}")
+        print(f"Akcie: {self.name}, Cena: {self.price}, Objem: {self.volume}")
