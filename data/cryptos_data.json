@@ -1,12 +1,12 @@
 [
     {
         "name": "bitcoin",
-        "price": 81645,
+        "price": 81635,
         "currency": "USD"
     },
     {
         "name": "ethereum",
-        "price": 1593.15,
+        "price": 1591.36,
         "currency": "USD"
     },
     {

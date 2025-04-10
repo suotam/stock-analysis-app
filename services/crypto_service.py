@@ -56,3 +56,20 @@ def remove_crypto_from_json(crypto_name, filename='data/cryptos_data.json'):
     else:
         save_cryptos_to_json(cryptos_to_keep, filename)
         print(f"Kryptoměna {crypto_name} byla úspěšně odstraněna.")
+
+def update_crypto(crypto):
+    """Aktualizuje data pro jednu kryptoměnu"""
+    price = get_crypto_price(crypto.name)
+    if price:
+        crypto.price = price
+        print(f"Kryptoměna {crypto.name} byla úspěšně aktualizována.")
+    else:
+        print(f"Chyba při aktualizaci kryptoměny {crypto.name}.")
+
+def update_all_cryptos():
+    """Aktualizuje data pro všechny kryptoměny"""
+    cryptos = load_cryptos_from_json()
+    for crypto in cryptos:
+        update_crypto_data_for_one(crypto)
+    save_cryptos_to_json(cryptos)
+    print("Všechny kryptoměny byly úspěšně aktualizovány.")

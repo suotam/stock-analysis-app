@@ -76,3 +76,21 @@ def remove_stock_from_json(stock_name, filename='data/stocks_data.json'):
     else:
         save_stocks_to_json(stocks_to_keep, filename)
         print(f"Akcie {stock_name} byla úspěšně odstraněna.")
+
+def update_stock(stock):
+    """Aktualizuje data pro jednu akcii"""
+    price, volume = get_stock_price(stock.name)
+    if price and volume:
+        stock.price = price
+        stock.volume = volume
+        print(f"Akcie {stock.name} byla úspěšně aktualizována.")
+    else:
+        print(f"Chyba při aktualizaci akcie {stock.name}.")
+
+def update_all_stocks():
+    """Aktualizuje data pro všechny akcie"""
+    stocks = load_stocks_from_json()
+    for stock in stocks:
+        update_stock_data_for_one(stock)
+    save_stocks_to_json(stocks)
+    print("Všechny akcie byly úspěšně aktualizovány.")
