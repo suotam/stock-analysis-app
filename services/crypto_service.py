@@ -31,3 +31,28 @@ def load_cryptos_from_json(filename='data/cryptos_data.json'):
     except FileNotFoundError:
         print(f"Soubor {filename} neexistuje.")
         return []
+
+
+def add_new_crypto(crypto_name):
+    price = get_crypto_price(crypto_name)
+    if price:
+        new_crypto = Crypto(name=crypto_name, price=price)
+        
+        cryptos = load_cryptos_from_json()
+        
+        cryptos.append(new_crypto)
+        
+        save_cryptos_to_json(cryptos)
+        print(f"Kryptoměna {crypto_name} byla úspěšně přidána.")
+    else:
+        print(f"Chyba při přidávání kryptoměny {crypto_name}.")
+
+def remove_crypto_from_json(crypto_name, filename='data/cryptos_data.json'):
+    """ Smaže kryptoměnu z JSON souboru """
+    cryptos = load_cryptos_from_json(filename)
+    cryptos_to_keep = [crypto for crypto in cryptos if crypto.name != crypto_name]
+    if len(cryptos_to_keep) == len(cryptos):
+        print(f"Kryptoměna {crypto_name} nebyla nalezena.")
+    else:
+        save_cryptos_to_json(cryptos_to_keep, filename)
+        print(f"Kryptoměna {crypto_name} byla úspěšně odstraněna.")

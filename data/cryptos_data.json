@@ -1,17 +1,17 @@
 [
     {
         "name": "bitcoin",
-        "price": 77626,
+        "price": 81645,
         "currency": "USD"
     },
     {
         "name": "ethereum",
-        "price": 1489.42,
+        "price": 1593.15,
         "currency": "USD"
     },
     {
         "name": "ripple",
-        "price": 1.84,
+        "price": 1.99,
         "currency": "USD"
     }
 ]
